@@ -1,0 +1,54 @@
+
+body { position:relative;
+       background: gray;
+       //background-image: url(Imagenes/bg.png);
+}
+
+.divs { 
+    border-radius: 5px;
+    background: white;
+    padding: 20px;
+    width: 200px;
+}
+
+#entrar { 
+    margin-top: 30px;
+    height: 90px;
+}
+
+#registro{
+    height: 115px;
+}
+
+#main{
+    float: right;
+    margin-top: 100px;
+    margin-right: 150px;
+}
+
+.btn {
+    background-color: #30353e;
+    color: #FFF;
+    border: 0px;
+    border-radius: 3px;
+    width: auto;
+    height: 25px;
+}
+
+input {
+    margin: 2px;
+}
+
+.imagen {
+    float: left;   
+    margin-top: 100px;
+    margin-left: 150px;
+}​
+
+font {
+    color: white;
+}
+.error{
+    background-color: lightcoral;   
+    float: right;    
+}
