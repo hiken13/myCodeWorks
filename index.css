@@ -49,6 +49,8 @@ font {
     color: white;
 }
 .error{
-    background-color: lightcoral;   
-    float: right;    
+    color: #FFF;
+    background-color: #E43D52;   
+    float: next;    
+    display: inline;
 }

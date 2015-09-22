@@ -24,6 +24,7 @@ function verificarInicioSesion() {
                 console.log("Bien");
             }
             if(peticion.responseText === "false") {
+                document.getElementById("errorL").innerHTML="";
                 var labelError = document.createElement("button");
                 labelError.setAttribute("class","error");
                 labelError.appendChild(document.createTextNode("Error, contraseña o usuario inválido"));               
