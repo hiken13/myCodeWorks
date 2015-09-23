@@ -57,20 +57,21 @@ function cargarAjax(metodo, queCargar, sync, dondeCargar)
 
 
 function existeUsuario(input_user) {
-    
-    var llamada = "controladorBD.php?usuario=" + input_user;
+
+    var llamada = "existeUsuario.php?usuario=" + input_user;
 
     var peticion = new XMLHttpRequest();
     peticion.open("GET", llamada, true);
     console.log(llamada);
-    
+
     peticion.onreadystatechange = function ()
     {
         if (peticion.readyState === 4)
         {
             console.log(peticion.responseText);
 
-            if (peticion.responseText === "true") {
+            if (peticion.responseText === "true")
+            {
                 console.log("error el usuario existe");
                 return true;
             }
@@ -79,8 +80,36 @@ function existeUsuario(input_user) {
                 console.log("registro guardado");
                 return false;
             }
-            
         }
     };
     peticion.send(null);
 }
+
+function guardarUsuario(nombre, apellido1, apellido2, correo, contraseña, fecha, genero) {
+    var llamada = "guardarUsuario.php?nombre=" + nombre + "&apellido1=" + apellido1 + "&apellido2=" + apellido2 + "&correo=" + correo + "&contraseña=" + contraseña + "&fechaIng=" + fecha + "&genero=" + genero;
+
+    var peticion = new XMLHttpRequest();
+    peticion.open("GET", llamada, true);
+    console.log(llamada);
+
+    peticion.onreadystatechange = function ()
+    {
+        if (peticion.readyState === 4)
+        {
+            console.log(peticion.responseText);
+
+            if (peticion.responseText === "true")
+            {
+                console.log("usuario guardado");
+                return true;
+            }
+            else
+            {//guardar registro
+                console.log("error al agregar usuario");
+                return false;
+            }
+        }
+    };
+    peticion.send(null);
+}
+

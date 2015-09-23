@@ -27,7 +27,6 @@
             </center>
         </div>
 
-
     </div>
 </body>
 <script>
@@ -43,6 +42,11 @@
             if (campo === "") {
                 alert("Espacio Vacio nombreCompleto");
                 error = true;
+            }
+            else {
+                var res = campo.split(" ");
+                if (res.length > 3)
+                    alert("nombre muy largo. nombre apellido1 apellido2");
             }
 
             campo = document.getElementById("correoElectronico").value;
@@ -66,13 +70,54 @@
             if (!error) {
                 var input_user = document.getElementById("correoElectronico").value;
                 error = existeUsuario(input_user);
-                if (!error)
+                if (error)
                     alert("Usuario ya existe");
                 else
                 {
-                    // guardo
+                    // guardado
                     var str = document.getElementById("nombreCompleto").value;
                     var res = str.split(" ");
+
+                    var nombre, apellido1, apellido2;
+
+                    if (res.length === 3) {
+                        nombre = res[0];
+                        apellido1 = res[1];
+                        apellido2 = res[2];
+                    }
+                    else if (res.length === 2) {
+                        nombre = res[0];
+                        apellido1 = res[1];
+                        apellido2 = "";
+                    }
+                    else if (res.length === 1) {
+                        nombre = res[0];
+                        apellido1 = "";
+                        apellido2 = "";
+                    }
+
+
+                    console.log(res);
+                    var correo = document.getElementById("correoElectronico").value;
+                    var contraseña = document.getElementById("contraseña").value;
+
+                    var genero;
+                    if (document.getElementById('male').checked)
+                        genero = 'm';
+                    else
+                        genero = 'f';
+
+                    var dia = document.getElementById("dia");
+                    dia = dia.options[dia.selectedIndex].value;
+
+                    var mes = document.getElementById("mes");
+                    mes = mes.options[mes.selectedIndex].value;
+
+                    var año = document.getElementById("año");
+                    año = año.options[año.selectedIndex].value;
+
+                    var fecha = año + "-" + mes + "-" + dia;
+                    guardarUsuario(nombre, apellido1, apellido2, correo, contraseña, fecha, genero);
                 }
             }
         }
@@ -102,7 +147,7 @@
             return false;
     }
 
-    function
+
 
 </script>
 </html>
