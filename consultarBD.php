@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include './procesar.php';
 //conexion
 $strconn = "host=localhost port=5432 dbname=webBD user=postgres password=12345";
@@ -15,16 +16,21 @@ $cifUser = cifrarDescifrar(true, $strUser);
 $queryLogin = "Select * from personas WHERE password = '$md5PassWord' and usuario = '$cifUser';";
 $result = pg_query($conn, $queryLogin) or die("<strong>Error durante la consulta.</strong>");
 
-$row = pg_fetch_row($result);
-$row[0] = cifrarDescifrar(false, $row[0]);
-$row[1] = cifrarDescifrar(false, $row[1]);
-$row[2] = cifrarDescifrar(false, $row[2]);
-$row[3] = cifrarDescifrar(false, $row[3]);
-if ($row == "") {
-    echo "false";
-}
-else{
-    echo $row;
-}
 
-    
+
+/*
+  $resultNombre = cifrarDescifrar(false, $row[0]);
+  $resultApellido1 = cifrarDescifrar(false, $row[1]);
+  $resultApellido2 = cifrarDescifrar(false, $row[2]);
+  $resultCorreo= cifrarDescifrar(false, $row[3]); */
+if ($row = pg_fetch_row($result)){
+    $row[0] = cifrarDescifrar(false, $row[0]);
+    $row[1] = cifrarDescifrar(false, $row[1]);
+    $row[2] = cifrarDescifrar(false, $row[2]);
+    $row[3] = cifrarDescifrar(false, $row[3]);
+    $_SESSION["loggedUsuario"] = $row;
+    echo $_SESSION;
+}
+ else {
+        echo "false";
+}

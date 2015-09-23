@@ -3,12 +3,12 @@
  * **/
 
 function verificarInicioSesion() {
-   var input_pass = document.getElementById("pass");
-   var input_user = document.getElementById("user");
-   input_pass.value = btoa(input_pass.value);
-    var llamada = "consultarBD.php?usuario=" + input_user.value+
+    var input_pass = document.getElementById("contraseña");
+    var input_user = document.getElementById("correoElectronico");
+    input_pass.value = btoa(input_pass.value);
+    var llamada = "consultarBD.php?usuario=" + input_user.value +
             "&password=" + input_pass.value;
-    
+
     var peticion = new XMLHttpRequest();
     peticion.open("GET", llamada, true);
     console.log(llamada);
@@ -16,13 +16,11 @@ function verificarInicioSesion() {
     {
         if (peticion.readyState === 4)
         {
-            console.log(peticion.responseText);
-
-            if (peticion.responseText !== "false") {                
-                console.log(peticion.responseText);
+            if (peticion.responseText !== "false") {
+                console.log("bien");
             }
-            if(peticion.responseText === "false") {
-                console.log("Error en inicio de sesion");
+            if (peticion.responseText === "false") {
+                console.log("mal");
             }
         }
     };

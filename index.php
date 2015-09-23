@@ -136,15 +136,23 @@
                 pos = getPosicion("correoElectronico");
                 console.log(pos.top, pos.right, pos.bottom, pos.left);
                 alert("Espacio Vacio correoElectronico");
+                error = true;
 
             }
-            else
+            else{
                 error = validarEmail(campo);
+                error = true;
+            }
 
             campo = document.getElementById("contraseña").value;
             if (campo === "") {
                 alert("Espacio Vacio contraseña");
+                error = true;
             }
+            if(error === true){
+                verificarInicioSesion();
+            }
+            
         }
     }
 
