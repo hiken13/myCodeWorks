@@ -15,19 +15,28 @@ body { position:relative;
 }
 
 #entrar { 
-    margin-top: 30px;
-    height: 90px;
+    margin-top: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 120px;
+    transform: translate(-50%, -50%);
 }
 
 #registro{
-    height: 115px;
+    margin-top: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 220px;
+    transform: translate(-50%, -50%);
 }
-
+/*
 #main{
     float: right;
     margin-top: 100px;
     margin-right: 150px;
-}
+}*/
 
 .btn {
     background-color: #30353e;
@@ -36,6 +45,7 @@ body { position:relative;
     border-radius: 3px;
     width: auto;
     height: 25px;
+    margin: 10px;
 }
 
 input {
