@@ -75,3 +75,24 @@ font {
     float: right;    
     display: inline;       
 }
+.imgHolder {
+    /*content:url(../Imagenes/mensaje.png);*/
+    position: absolute;
+    height: 20px;
+    width: 110px;
+    right: 150px;
+    top: 110px;
+}
+/*
+.imgHolder span {
+    color: red;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+}*/
+/*<span>Here's the overlay text</span>*/
+.lblMensaje{
+    position: absolute;
+    right:0px;
+    top: 0px;
+}

@@ -28,6 +28,12 @@
         </div>
 
     </div>
+    <div class="imgHolder">
+        <div>
+        <img src="Imagenes/mensaje.png"/>
+        <label class="lblMensaje">hola mundo</label>
+        </div>
+    </div>
 </body>
 <script>
     function cargarInicio(queCargar, dondeCargar) {
@@ -122,10 +128,15 @@
             }
         }
         else {
+            var pos;
             var campo = document.getElementById("correoElectronico").value;
 
             if (campo === "") {
+
+                pos = getPosicion("correoElectronico");
+                console.log(pos.top, pos.right, pos.bottom, pos.left);
                 alert("Espacio Vacio correoElectronico");
+
             }
             else
                 error = validarEmail(campo);
@@ -147,6 +158,11 @@
             return false;
     }
 
+    function getPosicion(nombre) {
+        var elemento = document.getElementById(nombre);
+        var localizacion = elemento.getBoundingClientRect();
+        return localizacion;
+    }
 
 
 </script>
