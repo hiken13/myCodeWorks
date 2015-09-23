@@ -12,18 +12,19 @@ $strPass = base64_decode($encodedPass);
 $md5PassWord = md5($strPass);
 $cifUser = cifrarDescifrar(true, $strUser);
 
-$queryLogin = "Select nombre, apellido1, apellido2, foto from personas WHERE password = '$md5PassWord' and usuario = '$cifUser';";
+$queryLogin = "Select * from personas WHERE password = '$md5PassWord' and usuario = '$cifUser';";
 $result = pg_query($conn, $queryLogin) or die("<strong>Error durante la consulta.</strong>");
 
-$row2 = pg_fetch_row($result);
-$resultNombre = cifrarDescifrar(false, $row2[0]);
-$resultApellido = cifrarDescifrar(false, $row2[1]);
-$resultApellido2 = cifrarDescifrar(false, $row2[2]);
-if ($row2 == "") {
+$row = pg_fetch_row($result);
+$row[0] = cifrarDescifrar(false, $row[0]);
+$row[1] = cifrarDescifrar(false, $row[1]);
+$row[2] = cifrarDescifrar(false, $row[2]);
+$row[3] = cifrarDescifrar(false, $row[3]);
+if ($row == "") {
     echo "false";
 }
 else{
-    echo $resultNombre." ".$resultApellido." ".$resultApellido2;
+    echo $row;
 }
 
     

@@ -8,6 +8,8 @@
     <!--<meta name="description" content="My Parse App">-->
     <link rel="stylesheet" href="css/home.css">
     <script type="text/javascript" src="scripts/funciones de Loguear.js"></script>
+    <script type="text/javascript" src="scripts/ajax.js"></script>
+    
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
@@ -16,7 +18,7 @@
         <div class="mainMenu" >       
             <ul>            
                 <label>Foros</label>
-                <label>Perfil</label>
+                <label onclick="cargarAjax('GET','verPerfil.php',true,'panel')">Perfil</label>                
                 <label>Amigos</label>
                 <label>Chat</label>                
                 <input class="btn" type="image"  src="Imagenes/notification.png">
@@ -25,8 +27,7 @@
         </div>
 
     </div>
-    <div class="panel">
-
+    <div class="panel" id="panel">
     </div>
 
 </center>

@@ -28,6 +28,18 @@ label:hover{
     width: 28px;
 }
 
+.label2{
+    padding: 3px;
+    margin: 10px;
+    color: #ccc;
+}
+.label2:hover{
+    color: #E43D52;    
+    cursor: pointer;
+    height: 34px;
+    width: 28px;
+}
+
 .btn {    
     vertical-align: -10px;
     height: 30px; 

@@ -8,9 +8,7 @@ function verificarInicioSesion() {
    input_pass.value = btoa(input_pass.value);
     var llamada = "consultarBD.php?usuario=" + input_user.value+
             "&password=" + input_pass.value;
-
-    var conectado = false;
-
+    
     var peticion = new XMLHttpRequest();
     peticion.open("GET", llamada, true);
     console.log(llamada);
@@ -21,18 +19,10 @@ function verificarInicioSesion() {
             console.log(peticion.responseText);
 
             if (peticion.responseText !== "false") {                
-                document.getElementById("errorL").innerHTML="";
-                var labelError = document.createElement("button");
-                labelError.setAttribute("class","bien");
-                labelError.appendChild(document.createTextNode("Correcto"));               
-                document.getElementById("errorL").appendChild(labelError);
+                console.log(peticion.responseText);
             }
             if(peticion.responseText === "false") {
-                document.getElementById("errorL").innerHTML="";
-                var labelError = document.createElement("button");
-                labelError.setAttribute("class","error");
-                labelError.appendChild(document.createTextNode("Error, contraseña o usuario inválido"));               
-                document.getElementById("errorL").appendChild(labelError);
+                console.log("Error en inicio de sesion");
             }
         }
     };
