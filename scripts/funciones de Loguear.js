@@ -20,8 +20,12 @@ function verificarInicioSesion() {
         {
             console.log(peticion.responseText);
 
-            if (peticion.responseText !== "false") {
-                console.log("Bien");
+            if (peticion.responseText !== "false") {                
+                document.getElementById("errorL").innerHTML="";
+                var labelError = document.createElement("button");
+                labelError.setAttribute("class","bien");
+                labelError.appendChild(document.createTextNode("Correcto"));               
+                document.getElementById("errorL").appendChild(labelError);
             }
             if(peticion.responseText === "false") {
                 document.getElementById("errorL").innerHTML="";

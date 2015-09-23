@@ -1,0 +1,33 @@
+
+body { position:relative;
+       background: gray;
+       background-image: url(../Imagenes/279455.jpg);
+       background-repeat: no-repeat;
+       background-size: cover;
+       backface-visibility: hidden;
+}
+.mainMenu {     
+    border-radius: 5px;
+    background: #B9BEE7;
+    padding: 3px;
+    margin: 10px;
+    width: 60%;        
+
+}
+
+ul{
+    list-style: none;   
+}
+label{
+    padding: 3px;
+    margin: 10px;
+    color: #30353e;
+//    background-color: #0DFF5A;
+//    border-radius: 124px 14px 129px 12px;
+}
+label:hover{
+    color: #E43D52;    
+    cursor: pointer;
+    height: 34px;
+    width: 28px;
+}

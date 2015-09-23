@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Code Share</title>
+    <title>My Code Works</title>
 
     <meta name="viewport" content="width=device-width">
     <!--<meta name="description" content="My Parse App">-->
@@ -12,7 +12,7 @@
 
 <body>
     <!--img class="image"-->​
-    <img class="imagen" src="Imagenes/share2.jpg" alt="" style="display: block;">
+    
     <div id="main">
         <div id="entrar" class="divs">
             <center>          

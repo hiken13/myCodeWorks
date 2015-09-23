@@ -1,7 +1,10 @@
 
 body { position:relative;
        background: gray;
-       //background-image: url(Imagenes/bg.png);
+       background-image: url(Imagenes/279455.jpg);
+       background-repeat: no-repeat;
+       background-size: cover;
+       backface-visibility: hidden;
 }
 
 .divs { 
@@ -51,6 +54,13 @@ font {
 .error{
     color: #FFF;
     background-color: #E43D52;   
-    float: next;    
-    display: inline;
+    float: right;    
+    display: inline;       
+}
+
+.bien{
+    color: #FFF;
+    background-color: #0DFF5A;   
+    float: right;    
+    display: inline;       
 }
