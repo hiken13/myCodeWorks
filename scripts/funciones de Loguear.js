@@ -17,7 +17,8 @@ function verificarInicioSesion() {
         if (peticion.readyState === 4)
         {
             if (peticion.responseText !== "false") {
-                console.log("bien");
+                document.getElementById("main").innerHTML="";
+                cargarAjax('GET','home.php',true,'main');
             }
             if (peticion.responseText === "false") {
                 console.log("mal");
