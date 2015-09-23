@@ -1,7 +1,7 @@
 
 body { position:relative;
        background: gray;
-       background-image: url(Imagenes/279455.jpg);
+       background-image: url(../Imagenes/279455.jpg);
        background-repeat: no-repeat;
        background-size: cover;
        backface-visibility: hidden;
