@@ -7,10 +7,9 @@ body { position:relative;
        backface-visibility: hidden;
 }
 .mainMenu {     
-    border-radius: 5px;   
-    padding: 3px;
-    margin: 10px;
-    width: 60%;        
+    border-radius: 5px;       
+    width: 60%;
+    height: 50px;
 
 }
 
@@ -30,11 +29,29 @@ label:hover{
 }
 
 .btn {    
-    background-color: #D1B3E8;
+    vertical-align: -10px;
+    height: 30px; 
+    width: 30px;
+    vertical-align: -10px;
+    //background-color: #D1B3E8;
     color: #000;
     border: 0px;
     border-radius: 3px;
     width: auto;
     height: 25px;
     cursor: pointer;
+}
+
+.btn:hover{        
+     color: #FDEFF0;    
+     background-color: rgba(255,0,0,0.30) ;     
+}
+
+.panel{
+    background-color: #ddd;
+    border-radius: 5px;   
+    padding: 3px;
+    margin: 10px;
+    height: 600px; 
+    width: 800px;
 }

@@ -12,16 +12,23 @@
 </head>
 <body>
 <center>
-    <div class="mainMenu" >       
-        <ul>            
-            <label>Foros</label>
-            <label>Perfil</label>
-            <label>Amigos</label>
-            <label>Chat</label>
-            <button class="btn">Salir</button>
-        </ul>
+    <div>
+        <div class="mainMenu" >       
+            <ul>            
+                <label>Foros</label>
+                <label>Perfil</label>
+                <label>Amigos</label>
+                <label>Chat</label>                
+                <input class="btn" type="image"  src="Imagenes/notification.png">
+                <input class="btn" type="image" src="Imagenes/exit.png" style="margin-left: 150px;">
+            </ul>            
+        </div>
+
     </div>
-    
+    <div class="panel">
+
+    </div>
+
 </center>
 </body>
 
