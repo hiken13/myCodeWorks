@@ -17,8 +17,11 @@
             <label>Foros</label>
             <label>Perfil</label>
             <label>Amigos</label>
+            <label>Chat</label>
+            <button class="btn">Salir</button>
         </ul>
     </div>
+    
 </center>
 </body>
 

@@ -7,8 +7,7 @@ body { position:relative;
        backface-visibility: hidden;
 }
 .mainMenu {     
-    border-radius: 5px;
-    background: #B9BEE7;
+    border-radius: 5px;   
     padding: 3px;
     margin: 10px;
     width: 60%;        
@@ -21,13 +20,21 @@ ul{
 label{
     padding: 3px;
     margin: 10px;
-    color: #30353e;
-//    background-color: #0DFF5A;
-//    border-radius: 124px 14px 129px 12px;
+    color: #ccc;
 }
 label:hover{
     color: #E43D52;    
     cursor: pointer;
     height: 34px;
     width: 28px;
+}
+
+.btn {    
+    background-color: #D1B3E8;
+    color: #000;
+    border: 0px;
+    border-radius: 3px;
+    width: auto;
+    height: 25px;
+    cursor: pointer;
 }
