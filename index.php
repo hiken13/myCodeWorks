@@ -10,8 +10,7 @@ session_start();
     <!--<meta name="description" content="My Parse App">-->
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="scripts/funciones de Loguear.js"></script>
-    <script type="text/javascript" src="scripts/ajax.js"></script>
-    <link rel="stylesheet" href="css/home.css">
+    <script type="text/javascript" src="scripts/ajax.js"></script>    
     
 </head>
 

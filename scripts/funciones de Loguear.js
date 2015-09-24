@@ -26,3 +26,31 @@ function verificarInicioSesion() {
     };
     peticion.send(null);
 }
+var edita = true;
+//Funcion para habilitar la edicion de informacion en el perfil
+function cambiar() {    
+    if (edita === true) {        
+        var candado = document.getElementById("locker");
+        candado.setAttribute("src", "/Imagenes/unlock.png");
+        document.getElementById("nombreTF").disabled = false;
+        document.getElementById("apellido1TF").disabled = false;
+        document.getElementById("apellido2TF").disabled = false;
+        document.getElementById("generoTF").disabled = false;
+        document.getElementById("empresaTF").disabled = false;
+        document.getElementById("fechaIngTF").disabled = false;
+        document.getElementById("labelTextoLock").innerHTML="Guardar cambios";
+        edita=false;
+    }
+    else {
+        var candado = document.getElementById("locker");
+        candado.setAttribute("src", "/Imagenes/lock.png");
+        document.getElementById("nombreTF").disabled = true;
+        document.getElementById("apellido1TF").disabled = true;
+        document.getElementById("apellido2TF").disabled = true;
+        document.getElementById("generoTF").disabled = true;
+        document.getElementById("empresaTF").disabled = true;
+        document.getElementById("fechaIngTF").disabled = true;
+        document.getElementById("labelTextoLock").innerHTML="Habilitar cambios";
+        edita=true;
+    }
+}

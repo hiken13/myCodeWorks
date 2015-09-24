@@ -59,6 +59,7 @@ label:hover{
      background-color: rgba(255,0,0,0.30) ;     
 }
 
+
 .panel{
     background-color: #ddd;
     border-radius: 5px;   
@@ -66,4 +67,16 @@ label:hover{
     margin: 10px;
     height: 600px; 
     width: 800px;
+}
+
+.btnLock{
+    vertical-align: -10px;
+    height: 60px; 
+    width: 60px;
+    vertical-align: -20px;
+    //background-color: #D1B3E8;
+    color: #000;
+    border: 0px;
+    border-radius: 3px;
+    cursor: pointer;       
 }
