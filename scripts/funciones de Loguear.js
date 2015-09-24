@@ -26,7 +26,11 @@ function verificarInicioSesion() {
     };
     peticion.send(null);
 }
+
+
+
 var edita = true;
+
 //Funcion para habilitar la edicion de informacion en el perfil
 function cambiar() {    
     if (edita === true) {        

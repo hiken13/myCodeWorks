@@ -14,6 +14,12 @@ session_start();
     <script type="text/javascript" src="scripts/ajax.js"></script>        
 </head>
 <body>
+    <script>
+        function cambiarImagen() {
+            console.log("guardado");
+            document.getElementById("formImagen").submit();
+        }
+    </script>
 <center>
     <div>
         <div class="mainMenu" >       

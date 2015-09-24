@@ -11,7 +11,7 @@ session_start();
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="scripts/funciones de Loguear.js"></script>
     <script type="text/javascript" src="scripts/ajax.js"></script>    
-    
+
 </head>
 
 <body>
@@ -38,7 +38,7 @@ session_start();
         </div>
     </div>
 </body>
-<script>
+<script>    
     function cargarInicio(queCargar, dondeCargar) {
         cargarAjax('GET', queCargar, true, dondeCargar);
     }
