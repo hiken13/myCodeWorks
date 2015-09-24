@@ -15,8 +15,8 @@ session_start();
 </head>
 <body>
     <script>
-        function cambiarImagen() {
-            console.log("guardado");
+        //funcion auxiliar para realizar un submit con DOM
+        function cambiarImagen() {                        
             document.getElementById("formImagen").submit();
         }
     </script>
@@ -24,6 +24,10 @@ session_start();
     <div>
         <div class="mainMenu" >       
             <ul>            
+                <form id="formImagen" method = "POST" action="guardarFoto.php" enctype="multipart/form-data">                    
+                    <input id="imagen" type = "file" name = "imagen" onchange="cambiarImagen()">                                                    
+                </form>
+                <a id="aux" name ="aux" style="visibility: hidden"></a>
                 <label>Foros</label>
                 <label onclick="cargarAjax('GET', 'verPerfil.php', true, 'panel')">Perfil</label>                
                 <label>Amigos</label>

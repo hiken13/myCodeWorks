@@ -17,6 +17,7 @@ function verificarInicioSesion() {
         if (peticion.readyState === 4)
         {
             if (peticion.responseText !== "false") {
+                console.log(peticion.responseText);
                 window.location.href = "home.php";
             }
             if (peticion.responseText === "false") {

@@ -1,20 +1,23 @@
 <?php
 session_start();
+include './procesar.php';
 ?>
 <link rel="stylesheet" href="css/home.css">
 
 <div id="registro" class="divs">
     <?php
     $session = $_SESSION["loggedUsuario"];
+    $urlImg = cifrarDescifrar(true, $session[3]);//cifrar el contenido del usuario, para acceder a la ruta de la imagen en el server
+    $urlImg = "profilePictures/".$urlImg;    
     ?>
     
     <center>
         <table>
             <tr>
             <center>
-                <img  style="border-radius: 10px;width: 80px; height: 100px" src='<?php if ($session[9] != "") echo $session[9];if ($session[9] == "") echo "profilePictures/profile"; ?>'><!--Foto-->                
-                <form id="formImagen" method = "POST" action="insertar.php" enctype="multipart/form-data">                    
-                    <input id="file" type = "file" name = "imagen" onchange="cambiarImagen()">                                                    
+                <img  style="border-radius: 10px;width: 80px; height: 100px" src='<?php echo $urlImg?>'><!--Foto-->                
+                <form id="formImagen" method = "POST" action="guardarFoto.php" enctype="multipart/form-data">                    
+                    <input id="imagen" type = "file" name = "imagen" onchange="cambiarImagen()">                                                    
                 </form>                
             </center>
             </tr>
