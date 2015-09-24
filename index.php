@@ -9,7 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width">
     <!--<meta name="description" content="My Parse App">-->
     <link rel="stylesheet" href="css/index.css">
-    <script type="text/javascript" src="scripts/funciones de Loguear.js"></script>
+    <script type="text/javascript" src="scripts/funciones gestion.js"></script>
     <script type="text/javascript" src="scripts/ajax.js"></script>    
 
 </head>

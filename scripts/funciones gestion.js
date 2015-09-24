@@ -33,8 +33,8 @@ function verificarInicioSesion() {
 var edita = true;
 
 //Funcion para habilitar la edicion de informacion en el perfil
-function cambiar() {    
-    if (edita === true) {        
+function cambiar() {
+    if (edita === true) {
         var candado = document.getElementById("locker");
         candado.setAttribute("src", "/Imagenes/unlock.png");
         document.getElementById("nombreTF").disabled = false;
@@ -43,8 +43,9 @@ function cambiar() {
         document.getElementById("generoTF").disabled = false;
         document.getElementById("empresaTF").disabled = false;
         document.getElementById("fechaIngTF").disabled = false;
-        document.getElementById("labelTextoLock").innerHTML="Guardar cambios";
-        edita=false;
+        document.getElementById("labelTextoLock").innerHTML = "Guardar cambios";
+        
+        edita = false;
     }
     else {
         var candado = document.getElementById("locker");
@@ -55,7 +56,45 @@ function cambiar() {
         document.getElementById("generoTF").disabled = true;
         document.getElementById("empresaTF").disabled = true;
         document.getElementById("fechaIngTF").disabled = true;
-        document.getElementById("labelTextoLock").innerHTML="Habilitar cambios";
-        edita=true;
+        document.getElementById("labelTextoLock").innerHTML = "Habilitar cambios";
+        
+        //tomar los valores para actualizar
+        var nombre = document.getElementById("nombreTF").value;
+        var apellido1 = document.getElementById("apellido1TF").value;
+        var apellido2 =  document.getElementById("apellido2TF").value;
+        var genero = document.getElementById("generoTF").value;
+        var empresa = document.getElementById("empresaTF").value;
+        var fechaIng = document.getElementById("fechaIngTF").value;
+
+        updateUsuario(nombre,apellido1,apellido2, empresa,fechaIng,genero);
+        edita = true;
     }
 }
+function updateUsuario(nombre, apellido1, apellido2, empresa, fecha, genero) {
+    var llamada = "updateUsuario.php?nombre=" + nombre + "&apellido1=" + apellido1 + "&apellido2=" + apellido2 + "&empresa=" + empresa + "&fechaIng=" + fecha + "&genero=" + genero;
+
+    var peticion = new XMLHttpRequest();
+    peticion.open("GET", llamada, true);
+    console.log(llamada);
+
+    peticion.onreadystatechange = function ()
+    {
+        if (peticion.readyState === 4)
+        {
+            console.log(peticion.responseText);
+
+            if (peticion.responseText !== "false")
+            {
+                console.log("usuario actualizado");
+                return true;
+            }
+            else
+            {//guardar registro
+                console.log("error al agregar usuario");
+                return false;
+            }
+        }
+    };
+    peticion.send(null);
+}
+

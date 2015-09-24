@@ -16,9 +16,10 @@ include './procesar.php';
             <tr>
             <center>
                 <img  style="border-radius: 10px;width: 80px; height: 100px" src='<?php echo $urlImg?>'><!--Foto-->                
-                <form id="formImagen" method = "POST" action="guardarFoto.php" enctype="multipart/form-data">                    
+                <!--<form id="formImagen" method = "POST" action="guardarFoto.php" enctype="multipart/form-data">                    
                     <input id="imagen" type = "file" name = "imagen" onchange="cambiarImagen()">                                                    
                 </form>                
+                -->
             </center>
             </tr>
             <tr>
