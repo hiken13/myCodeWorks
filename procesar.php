@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Funcion para encriptar y desencriptar los datos de la bd
 function cifrarDescifrar($cifrar, $string) {
     $salida = false;

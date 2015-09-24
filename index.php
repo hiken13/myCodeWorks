@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <head>
     <meta charset="utf-8">
@@ -8,11 +11,12 @@
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="scripts/funciones de Loguear.js"></script>
     <script type="text/javascript" src="scripts/ajax.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+    
 </head>
 
 <body>
     <div id="main">
-        
         <div id="entrar" class="divs">
             <center>          
                 <font>Iniciar Sesión</font>
@@ -30,8 +34,8 @@
     </div>
     <div class="imgHolder">
         <div>
-        <img src="Imagenes/mensaje.png"/>
-        <label class="lblMensaje">hola mundo</label>
+            <img src="Imagenes/mensaje.png"/>
+            <label class="lblMensaje">hola mundo</label>
         </div>
     </div>
 </body>
@@ -139,7 +143,7 @@
                 error = true;
 
             }
-            else{
+            else {
                 error = validarEmail(campo);
                 error = true;
             }
@@ -149,10 +153,10 @@
                 alert("Espacio Vacio contraseña");
                 error = true;
             }
-            if(error === true){
+            if (error === true) {
                 verificarInicioSesion();
             }
-            
+
         }
     }
 

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include './procesar.php';
 
 $strconn = "host=localhost port=5432 dbname=webBD user=postgres password=12345";
@@ -26,8 +28,8 @@ $md5PassWord = md5($strContraseña);
 $queryInsert = "INSERT INTO personas values('$cifNombre','$cifApellido1', '$cifApellido2', '$cifCorreo', '$md5PassWord', '$strGenero','$strFechaIng')";
 $result = pg_query($conn, $queryInsert);
 if (!$result) {
-    echo "false";//no agrego
+    echo "false"; //no agrego
 } elseif ($result) {
-    echo "true";//usuario agregado
+    echo "true"; //usuario agregado
 }
               // fin insertar una persona
