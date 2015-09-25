@@ -5,7 +5,7 @@ session_start();
 <head>
     <meta charset="utf-8">
 
-    <title>My Code Works?</title>
+    <title>My Code Works?</title><!--  bat@gmail.com<-->
     <meta name="viewport" content="width=device-width">
     <!--<meta name="description" content="My Parse App">-->
     <link rel="stylesheet" href="css/index.css">
@@ -30,12 +30,6 @@ session_start();
             </center>
         </div>
 
-    </div>
-    <div class="imgHolder">
-        <div>
-            <img src="Imagenes/mensaje.png"/>
-            <label class="lblMensaje">hola mundo</label>
-        </div>
     </div>
 </body>
 <script>    

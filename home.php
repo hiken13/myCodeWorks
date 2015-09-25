@@ -17,7 +17,6 @@ session_start();
     <script>
         //funcion auxiliar para realizar un submit con DOM
         function cambiarImagen() {            
-            
             document.getElementById("formImagen").submit();
         }
     </script>
@@ -32,7 +31,7 @@ session_start();
                 <label>Foros</label>
                 <label onclick="cargarAjax('GET', 'verPerfil.php', true, 'panel')">Perfil</label>                
                 <label>Amigos</label>
-                <label>Chat</label>                
+                <label onclick="cargarAjax('GET', '/chat/chat.php', true, 'panel')">Chat</label>
                 <input class="btn" type="image"  src="Imagenes/notification.png">
                 <input class="btn" type="image" src="Imagenes/exit.png" style="margin-left: 150px;">
             </ul>            
