@@ -80,3 +80,7 @@ label:hover{
     border-radius: 3px;
     cursor: pointer;       
 }
+.btnLock:hover{
+     color: #FDEFF0;    
+     background-color: rgba(255,0,0,0.30) ;     
+}

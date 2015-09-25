@@ -2,7 +2,7 @@
 
 session_start();
 
-include './procesar.php';
+include '../procesar.php';
 
 $strconn = "host=localhost port=5432 dbname=webBD user=postgres password=12345";
 $conn = pg_connect($strconn) or die("<strong> Ha ocurrido un error en el acceso a la base de datos. </strong>");
@@ -13,6 +13,7 @@ $strApellido2 = $_GET["apellido2"];
 $strEmpresa = $_GET["empresa"];
 $strFechaIng = $_GET["fechaIng"];
 $strGenero = $_GET["genero"];
+$strFechaIng = $_GET["fechaIng"];
 $session = $_SESSION["loggedUsuario"];
 $strCorreo = $session[3];
 
@@ -24,10 +25,11 @@ $cifApellido2 = cifrarDescifrar(true, $strApellido2);
 $cifCorreo = cifrarDescifrar(true, $strCorreo);
 
 
-
+echo "fechita: ".$strFechaIng;
 // fin de cifrar datos
 //insertar una persona
-$queryInsert = "UPDATE personas SET nombre='$cifNombre', apellido1='$cifApellido1', apellido2='$cifApellido2', genero='$strGenero', empresa='$strEmpresa' WHERE usuario = '$cifCorreo'";
+$queryInsert = "UPDATE personas SET nombre='$cifNombre', apellido1='$cifApellido1', apellido2='$cifApellido2', genero='$strGenero', \"fechaIngreso\" ='$strFechaIng', empresa='$strEmpresa' WHERE usuario = '$cifCorreo'";
+
 $result = pg_query($conn, $queryInsert);
 if (!$result) {
     echo "false"; //no actualizó

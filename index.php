@@ -32,12 +32,14 @@ session_start();
 
     </div>
 </body>
-<script>    
+<script>
     function cargarInicio(queCargar, dondeCargar) {
         cargarAjax('GET', queCargar, true, dondeCargar);
     }
 
     function validarFormulario(formulario) {
+        var input_pass = document.getElementById("contraseña");
+        input_pass.value = btoa(input_pass.value);//encriptar la contraseña
         if (!formulario)// Es el formulario registro
         {
             var error = false;
@@ -120,7 +122,7 @@ session_start();
                     año = año.options[año.selectedIndex].value;
 
                     var fecha = año + "-" + mes + "-" + dia;
-                    guardarUsuario(nombre, apellido1, apellido2, correo, contraseña, fecha, genero);
+                    guardarUsuario(nombre, apellido1, apellido2, correo, input_pass.value, fecha, genero);
                 }
             }
         }

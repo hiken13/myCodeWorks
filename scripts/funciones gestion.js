@@ -4,8 +4,9 @@
 
 function verificarInicioSesion() {
     var input_pass = document.getElementById("contraseña");
+    input_pass.value = btoa(input_pass.value);//encriptar la contraseña
     var input_user = document.getElementById("correoElectronico");
-    input_pass.value = btoa(input_pass.value);
+    
     var llamada = "consultarBD.php?usuario=" + input_user.value +
             "&password=" + input_pass.value;
 
@@ -18,7 +19,7 @@ function verificarInicioSesion() {
         {
             if (peticion.responseText !== "false") {
                 console.log(peticion.responseText);
-                window.location.href = "home.php";
+                window.location.href = "home/home.php";
             }
             if (peticion.responseText === "false") {
                 console.log("mal");
@@ -65,7 +66,7 @@ function cambiar() {
         var genero = document.getElementById("generoTF").value;
         var empresa = document.getElementById("empresaTF").value;
         var fechaIng = document.getElementById("fechaIngTF").value;
-
+        console.log(fechaIng);
         updateUsuario(nombre,apellido1,apellido2, empresa,fechaIng,genero);
         edita = true;
     }

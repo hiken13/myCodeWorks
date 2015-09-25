@@ -56,6 +56,12 @@ function cargarAjax(metodo, queCargar, sync, dondeCargar)
 }
 
 
+/**
+ * Funcion para corroborar la existencia de un usuario, si existe retorna true,
+ *  caso contrario false
+ * @param {type} usuario a buscar
+ * @returns {undefined}console.log(peticion.responseText);
+ */
 function existeUsuario(input_user) {
 
     var llamada = "existeUsuario.php?usuario=" + input_user;
@@ -67,9 +73,7 @@ function existeUsuario(input_user) {
     peticion.onreadystatechange = function ()
     {
         if (peticion.readyState === 4)
-        {
-            console.log(peticion.responseText);
-
+        {            
             if (peticion.responseText === "true")
             {
                 console.log("error el usuario existe");
@@ -95,9 +99,7 @@ function guardarUsuario(nombre, apellido1, apellido2, correo, contraseña, fecha
     peticion.onreadystatechange = function ()
     {
         if (peticion.readyState === 4)
-        {
-            console.log(peticion.responseText);
-
+        {           
             if (peticion.responseText === "true")
             {
                 console.log("usuario guardado");
@@ -112,4 +114,3 @@ function guardarUsuario(nombre, apellido1, apellido2, correo, contraseña, fecha
     };
     peticion.send(null);
 }
-

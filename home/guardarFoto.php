@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'procesar.php';
+include '../procesar.php';
 //conexion
 $session=$_SESSION["loggedUsuario"];
 $strconn = "host=localhost port=5432 dbname=webBD user=postgres password=12345";

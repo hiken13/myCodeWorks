@@ -1,21 +1,21 @@
 <?php
 session_start();
-include './procesar.php';
+include '../procesar.php';
 ?>
-<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="../home/home.css">
 
 <div id="registro" class="divs">
     <?php
     $session = $_SESSION["loggedUsuario"];
-    $urlImg = cifrarDescifrar(true, $session[3]);//cifrar el contenido del usuario, para acceder a la ruta de la imagen en el server
-    $urlImg = "profilePictures/".$urlImg;    
+    $urlImg = cifrarDescifrar(true, $session[3]); //cifrar el contenido del usuario, para acceder a la ruta de la imagen en el server
+    $urlImg = "/profilePictures/" . $urlImg;
     ?>
-    
+
     <center>
         <table>
             <tr>
             <center>
-                <img  style="border-radius: 10px;width: 80px; height: 100px" src='<?php echo $urlImg?>'><!--Foto-->                
+                <img  style="border-radius: 10px;width: 80px; height: 100px" src='<?php echo $urlImg ?>'><!--Foto-->                
                 <!--<form id="formImagen" method = "POST" action="guardarFoto.php" enctype="multipart/form-data">                    
                     <input id="imagen" type = "file" name = "imagen" onchange="cambiarImagen()">                                                    
                 </form>                
@@ -37,11 +37,23 @@ include './procesar.php';
             </tr>
             <tr>
                 <td><strong>Género</strong></td>                
-                <td><input id="generoTF" type="text" name="genero" disabled="true" value="<?php if ($session[5] == 'm') echo "Masculino";if ($session[5] == 'f') echo"Femenino" ?>"></td><!--Genero-->
+                <td>
+                    <select name="generoTF" id="generoTF" onchange="" size="1" disabled="true">
+                        <?php if($session[5] == "m") { ?>
+                            <option value="m" selected>Masculino</option>
+                            <option value="f">Femenino</option>
+                        <?php } else { ?>
+                            <option value="m">Masculino</option>
+                            <option value="f" selected>Femenino</option>
+                        <?php } ?>
+                    </select>
+                </td><!--Genero-->
             </tr>
             <tr>
                 <td><strong>Ingreso al TEC</strong></td>                
-                <td><input id="fechaIngTF" type="text" name="fechaIng" disabled="true" value="<?php echo $session[6] ?>"></td><!--Fecha de ingreso al TEC-->
+                <td>
+                    <input name="fechaIngTF" id="fechaIngTF" type="date" disabled="true" value="<?php echo $session[6]?>">
+                </td><!--Fecha de ingreso al TEC-->
             </tr>
             <tr>
                 <td><strong>Empresa</strong></td>                
@@ -50,7 +62,7 @@ include './procesar.php';
         </table>
     </center>
 
-    <img src="/Imagenes/lock.png"onclick="cambiar()"id="locker" class="btnLock">
+    <img src="../Imagenes/lock.png"onclick="cambiar()"id="locker" class="btnLock">
     <a id="labelTextoLock">Habilitar cambios</a>
 
 
