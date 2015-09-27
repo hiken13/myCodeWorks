@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width">
     <!--<meta name="description" content="My Parse App">-->
     <link rel="stylesheet" href="css/home.css">
-    <script type="text/javascript" src="scripts/funciones gestion.js"></script>
+    <script type="text/javascript" src="scripts/funcionesGestion.js"></script>
     <script type="text/javascript" src="scripts/ajax.js"></script>
     <script type="text/javascript" src="chat/chat.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
