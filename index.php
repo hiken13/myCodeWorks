@@ -10,7 +10,7 @@ session_start();
     <title>My Code Works?</title><!--  bat@gmail.com -->
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/index.css">
-    <script type="text/javascript" src="scripts/funciones gestion.js"></script>
+    <script type="text/javascript" src="scripts/funcionesGestion.js"></script>
     <script type="text/javascript" src="scripts/ajax.js"></script>
 
 </head>
@@ -39,7 +39,7 @@ session_start();
     }
 
     function validarFormulario(formulario) {
-       
+        document.getElementById("contraseña").innerHTML = "";
         if (!formulario)// Es el formulario registro
         {
             var error = false;

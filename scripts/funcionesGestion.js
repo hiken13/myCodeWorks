@@ -91,6 +91,7 @@ function cambiar() {
     }
 }
 function updateUsuario(nombre, apellido1, apellido2, empresa, fecha, genero, pass, newPass) {
+    
     var llamada = "/home/updateUsuario.php?nombre=" + nombre + "&apellido1=" + apellido1 + "&apellido2=" + apellido2 + "&empresa=" + empresa + "&fechaIng=" + fecha + "&genero=" + genero + "&pass=" + pass + "&newPass=" + newPass;
     var peticion = new XMLHttpRequest();
     peticion.open("GET", llamada, true);

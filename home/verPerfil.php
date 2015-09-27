@@ -3,7 +3,7 @@ session_start();
 include '../procesar.php';
 ?>
 <link rel="stylesheet" href="../css/home.css">
-<script src="../CryptoJS/rollups/md5.js"></script>
+
 
 <div id="registro" class="divs">
     <?php
