@@ -1,16 +1,17 @@
 <?php
 session_start();
 ?>
-<!doctype html>
+<!--doctype html-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
 
-    <title>My Code Works?</title><!--  bat@gmail.com<-->
+    <title>My Code Works?</title><!--  bat@gmail.com -->
     <meta name="viewport" content="width=device-width">
-    <!--<meta name="description" content="My Parse App">-->
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="scripts/funciones gestion.js"></script>
-    <script type="text/javascript" src="scripts/ajax.js"></script>    
+    <script type="text/javascript" src="scripts/ajax.js"></script>
 
 </head>
 
