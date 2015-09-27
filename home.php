@@ -34,7 +34,7 @@ session_start();
                 <label>Foros</label>
                 <label onclick="cargarAjax('GET', '/home/verPerfil.php', true, 'panel')">Perfil</label>                
                 <label>Amigos</label>
-                <label>Chat</label>                
+                <label onclick="cargarAjax('GET', 'chat/chat.php', true, 'panel')">Chat</label>                
                 <input class="btn" type="image"  src="../Imagenes/notification.png">
                 <input class="btn" type="image" src="../Imagenes/exit.png" style="margin-left: 150px;">
             </ul>            
