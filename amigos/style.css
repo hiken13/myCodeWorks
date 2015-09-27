@@ -1,0 +1,67 @@
+.contenedores {
+    border:2px solid #ACD8F0;
+    height:470px;
+    background-color: white;
+    padding:10px;
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+}
+
+#muro {
+    width: 500px;   
+}
+
+#contenedorAmigos {
+    width: 250px;   
+}
+
+.lblAmigos {
+    color: black;
+}
+
+#search {
+
+}
+
+#search input[type="text"] {
+    background: url(IMG/search-dark.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+}
+
+#search input[type="text"]:focus {
+    width: 200px;
+}
+
+table{
+    height: 100%;
+    width: 80%;
+}
+
+#contenedor {   
+    overflow: auto;
+    height: 90%;
+}
+
+.amigo {
+    border:2px solid lightgray;
+    width: auto;
+    height: auto;
+    background-color: white;
+    color: black;
+}

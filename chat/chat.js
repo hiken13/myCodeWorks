@@ -10,16 +10,16 @@ function enviarMensaje() {
     return false;
 }
 function loadLog() {
-    var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
+    //var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
     $.ajax({
         url: "chat/log.html",
         cache: false,
         success: function (html) {
             $("#chatbox").html(html);
             var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20;
-            if (newscrollHeight > oldscrollHeight) {
+            //if (newscrollHeight > oldscrollHeight) {
                 $("#chatbox").animate({scrollTop: newscrollHeight}, 'normal');
-            }
+            //}
         }
     });
 }
