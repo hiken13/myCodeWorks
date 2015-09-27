@@ -38,8 +38,7 @@ session_start();
         cargarAjax('GET', queCargar, true, dondeCargar);
     }
 
-    function validarFormulario(formulario) {
-        document.getElementById("contraseña").innerHTML = "";
+    function validarFormulario(formulario) {        
         if (!formulario)// Es el formulario registro
         {
             var error = false;
@@ -104,7 +103,7 @@ session_start();
 
                     console.log(res);
                     var correo = document.getElementById("correoElectronico").value;
-                    var contraseña = document.getElementById("contraseña").value;
+                    var contraseña = document.getElementById("contraseña").value;                    
                     contraseña = btoa(contraseña);
                     var genero;
                     if (document.getElementById('male').checked)
@@ -144,6 +143,7 @@ session_start();
             }
 
             campo = document.getElementById("contraseña").value;
+            
             if (campo === "") {
                 alert("Espacio Vacio contraseña");
                 error = true;
@@ -151,7 +151,7 @@ session_start();
             if (error === true) {
                 verificarInicioSesion();
             }
-
+            document.getElementById("contraseña").value="";
         }
     }
 

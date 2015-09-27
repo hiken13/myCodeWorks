@@ -20,6 +20,6 @@ $strUsuario = cifrarDescifrar(true, $strUsuario);
 move_uploaded_file($archivo, $ruta . "/" .$strUsuario);
 
 $ruta = $ruta . "/" .$strUsuario;
-//header("Location: ../home.php");
+header("Location: ../home.php");
 die();
         

@@ -1,8 +1,24 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+session_start();
+
+$strPass = $_GET["pass"];
+/*
+ * Funcion para verificar que la contraseña introducida, sea igual a la que está usando
+ * actualmente
+ * @param contraseña a verificar
+ * * */
+
+$session = $_SESSION["loggedUsuario"];
+$strPass = base64_decode($strPass);
+$cifPassword = md5($strPass);
+
+
+if ($session[4] === $cifPassword) {    
+    echo "true";
+} else {
+    echo "false";
+}
+
+
 

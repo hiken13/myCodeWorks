@@ -84,3 +84,8 @@ label:hover{
      color: #FDEFF0;    
      background-color: rgba(255,0,0,0.30) ;     
 }
+
+.myTableStyle {    
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
