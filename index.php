@@ -38,8 +38,7 @@ session_start();
     }
 
     function validarFormulario(formulario) {
-        var input_pass = document.getElementById("contraseña");
-        input_pass.value = btoa(input_pass.value);//encriptar la contraseña
+       
         if (!formulario)// Es el formulario registro
         {
             var error = false;
@@ -105,7 +104,7 @@ session_start();
                     console.log(res);
                     var correo = document.getElementById("correoElectronico").value;
                     var contraseña = document.getElementById("contraseña").value;
-
+                    contraseña = btoa(contraseña);
                     var genero;
                     if (document.getElementById('male').checked)
                         genero = 'm';
@@ -122,7 +121,7 @@ session_start();
                     año = año.options[año.selectedIndex].value;
 
                     var fecha = año + "-" + mes + "-" + dia;
-                    guardarUsuario(nombre, apellido1, apellido2, correo, input_pass.value, fecha, genero);
+                    guardarUsuario(nombre, apellido1, apellido2, correo, contraseña, fecha, genero);
                 }
             }
         }

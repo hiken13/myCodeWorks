@@ -6,6 +6,7 @@ include './procesar.php';
 $strconn = "host=localhost port=5432 dbname=webBD user=postgres password=12345";
 $conn = pg_connect($strconn) or die("<strong> Ha ocurrido un error en el acceso a la base de datos. </strong>");
 
+
 $encodedPass = $_GET["contraseña"];//decodificar la contraseña  que envió el AJAX
 $strNombre = $_GET["nombre"];
 $strApellido1 = $_GET["apellido1"];
@@ -13,7 +14,7 @@ $strApellido2 = $_GET["apellido2"];
 $strCorreo = $_GET["correo"];
 $strContraseña = base64_decode($encodedPass);
 $strFechaIng = $_GET["fechaIng"];
-$strGenero = $_GET["genero"];
+$strGenero = $_GET["genero"]; 
 
 //cifrar los datos
 
@@ -21,6 +22,7 @@ $cifNombre = cifrarDescifrar(true, $strNombre);
 $cifApellido1 = cifrarDescifrar(true, $strApellido1);
 $cifApellido2 = cifrarDescifrar(true, $strApellido2);
 $cifCorreo = cifrarDescifrar(true, $strCorreo);
+
 
 $md5PassWord = md5($strContraseña);
 

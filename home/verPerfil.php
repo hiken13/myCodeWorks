@@ -2,7 +2,8 @@
 session_start();
 include '../procesar.php';
 ?>
-<link rel="stylesheet" href="../home/home.css">
+<link rel="stylesheet" href="../css/home.css">
+<script src="../CryptoJS/rollups/md5.js"></script>
 
 <div id="registro" class="divs">
     <?php
@@ -12,6 +13,7 @@ include '../procesar.php';
     ?>
 
     <center>
+        <!--Tabla para mostrar los datos del usuario -->
         <table>
             <tr>
             <center>
@@ -39,7 +41,7 @@ include '../procesar.php';
                 <td><strong>Género</strong></td>                
                 <td>
                     <select name="generoTF" id="generoTF" onchange="" size="1" disabled="true">
-                        <?php if($session[5] == "m") { ?>
+                        <?php if ($session[5] == "m") { ?>
                             <option value="m" selected>Masculino</option>
                             <option value="f">Femenino</option>
                         <?php } else { ?>
@@ -52,21 +54,44 @@ include '../procesar.php';
             <tr>
                 <td><strong>Ingreso al TEC</strong></td>                
                 <td>
-                    <input name="fechaIngTF" id="fechaIngTF" type="date" disabled="true" value="<?php echo $session[6]?>">
+                    <input name="fechaIngTF" id="fechaIngTF" type="date" disabled="true" value="<?php echo $session[6] ?>">
                 </td><!--Fecha de ingreso al TEC-->
             </tr>
             <tr>
                 <td><strong>Empresa</strong></td>                
                 <td><input id="empresaTF" type="text" name="empresa" disabled="true" value="<?php if ($session[7] == "") echo"No tiene empresa registrada";if ($session[7] != "") echo $session[7] ?>"></td><!--Empresa actual-->
             </tr>
+
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <br>
+                    Modificar Contraseña
+                    <hr>
+                    <br>
+                </td>
+            </tr>
+            <tr>                    
+                <td>                    
+                    <strong>Contraseña Actual</strong>
+                </td>                
+                <td><input id="passTF" type="password" name="passTF" disabled="true" ></td><!--Empresa actual-->
+            </tr>
+            <tr>
+                <td><strong>Contraseña Nueva</strong></td>                
+                <td><input id="newPassTF" type="password" name="newPassTF" disabled="true"></td><!--Empresa actual-->
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <br>                    
+                    <hr>
+                    <br>
+                </td>
+            </tr>
         </table>
     </center>
 
     <img src="../Imagenes/lock.png"onclick="cambiar()"id="locker" class="btnLock">
-    <a id="labelTextoLock">Habilitar cambios</a>
-
-
-
+    <a id="labelTextoLock">Habilitar cambios</a>    
 </div>
 
 <?php
