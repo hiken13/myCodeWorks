@@ -26,8 +26,17 @@ function obtenerXHR()
     return req;
 }
 
+
+
 function cargarAjax(metodo, queCargar, sync, dondeCargar)
 {
+    if (queCargar === "/home/verPerfil.php") {
+        document.getElementById("formImagen").style.display = 'block';
+    }
+    else {
+        document.getElementById("formImagen").style.display = 'none';
+    }
+
     var peticion = obtenerXHR();
     peticion.open(metodo, queCargar, sync);
     peticion.onreadystatechange = function ()
@@ -65,15 +74,13 @@ function cargarAjax(metodo, queCargar, sync, dondeCargar)
 function existeUsuario(input_user) {
 
     var llamada = "existeUsuario.php?usuario=" + input_user;
-
     var peticion = new XMLHttpRequest();
     peticion.open("GET", llamada, true);
     console.log(llamada);
-
     peticion.onreadystatechange = function ()
     {
         if (peticion.readyState === 4)
-        {            
+        {
             if (peticion.responseText === "true")
             {
                 console.log("error el usuario existe");
@@ -91,15 +98,13 @@ function existeUsuario(input_user) {
 
 function guardarUsuario(nombre, apellido1, apellido2, correo, contraseña, fecha, genero) {
     var llamada = "guardarUsuario.php?nombre=" + nombre + "&apellido1=" + apellido1 + "&apellido2=" + apellido2 + "&correo=" + correo + "&contraseña=" + contraseña + "&fechaIng=" + fecha + "&genero=" + genero;
-
     var peticion = new XMLHttpRequest();
     peticion.open("GET", llamada, true);
     console.log(llamada);
-
     peticion.onreadystatechange = function ()
     {
         if (peticion.readyState === 4)
-        {           
+        {
             if (peticion.responseText === "true")
             {
                 console.log("usuario guardado");

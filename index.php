@@ -9,6 +9,7 @@ session_start();
 
     <title>My Code Works?</title><!--  bat@gmail.com -->
     <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="Imagenes/IconTitle.png" />
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="scripts/funcionesGestion.js"></script>
     <script type="text/javascript" src="scripts/ajax.js"></script>

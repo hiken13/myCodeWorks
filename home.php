@@ -10,6 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width">
     <!--<meta name="description" content="My Parse App">-->
     <link rel="stylesheet" href="css/home.css">
+    <link rel="shortcut icon" href="Imagenes/IconTitle.png" />
     <script type="text/javascript" src="scripts/funcionesGestion.js"></script>
     <script type="text/javascript" src="scripts/ajax.js"></script>
     <script type="text/javascript" src="chat/chat.js"></script>
@@ -27,9 +28,10 @@ session_start();
     <div>
         <div class="mainMenu" >       
             <ul>            
-                <form id="formImagen" method = "POST" action="../home/guardarFoto.php" enctype="multipart/form-data">                    
-                    <input id="imagen" type = "file" name = "imagen" onchange="cambiarImagen()">                                                    
+                <form  id="formImagen" method = "POST" action="../home/guardarFoto.php" enctype="multipart/form-data">                    
+                    <input <input type="file" class="custom-file-input" name = "imagen" onchange="cambiarImagen()">                                                     
                 </form>
+                
                 <a id="aux" name ="aux" style="visibility: hidden"></a>
                 <label>Foros</label>
                 <label onclick="cargarAjax('GET', '/home/verPerfil.php', true, 'panel')">Perfil</label>                

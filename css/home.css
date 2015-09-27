@@ -55,8 +55,8 @@ label:hover{
 }
 
 .btn:hover{        
-     color: #FDEFF0;    
-     background-color: rgba(255,0,0,0.30) ;     
+    color: #FDEFF0;    
+    background-color: rgba(255,0,0,0.30) ;     
 }
 
 
@@ -81,11 +81,50 @@ label:hover{
     cursor: pointer;       
 }
 .btnLock:hover{
-     color: #FDEFF0;    
-     background-color: rgba(255,0,0,0.30) ;     
+    color: #FDEFF0;    
+    background-color: rgba(255,0,0,0.30) ;     
 }
 
 .myTableStyle {    
     margin-bottom: 25px;
     margin-top: 25px;
+}
+
+#formImagen{
+    position: absolute;
+    display: none;
+    float: right;
+    margin-top: 10%;
+    margin-left: 10%;
+    
+}
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Cambiar Foto';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  background: url(../Imagenes/backgroundButton.png);
+  background-color: #584545 ;
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 7pt;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+   background-color: rgba(255,0,0,0.30) ; 
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
