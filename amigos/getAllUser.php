@@ -10,12 +10,12 @@
         $row[0] = cifrarDescifrar(false, $row[0]);//NOmbre
         $row[1] = cifrarDescifrar(false, $row[1]);//Apellido1
         $row[2] = cifrarDescifrar(false, $row[2]);//Apellido2
+        array_push($row, $row[3]);
         $row[3] = cifrarDescifrar(false, $row[3]);//Correo
         // $row[4] contraseña
         //$row[5] Genero
         //$row[6] Fecha Ingreso
         //$row[7] Empresa
-        
         
         //echo $row[0].$row[1].$row[2].$row[3];
         $arreglo[$posicion] = $row;
