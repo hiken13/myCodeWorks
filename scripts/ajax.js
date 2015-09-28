@@ -30,12 +30,7 @@ function obtenerXHR()
 
 function cargarAjax(metodo, queCargar, sync, dondeCargar)
 {
-    if (queCargar === "/home/verPerfil.php") {
-        document.getElementById("formImagen").style.display = 'block';
-    }
-    else {
-        document.getElementById("formImagen").style.display = 'none';
-    }
+
 
     var peticion = obtenerXHR();
     peticion.open(metodo, queCargar, sync);
@@ -61,6 +56,12 @@ function cargarAjax(metodo, queCargar, sync, dondeCargar)
          console.log("Estado de la Petición: "+peticion.readyState); 
          }*/
     };
+    if (queCargar === "/home/verPerfil.php") {
+        document.getElementById("formImagen").style.display = 'block';
+    }
+    else {
+        document.getElementById("formImagen").style.display = 'none';
+    }
     peticion.send(null);
 }
 

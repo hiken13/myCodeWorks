@@ -35,8 +35,8 @@ session_start();
                 <a id="aux" name ="aux" style="visibility: hidden"></a>
                 <label>Foros</label>
                 <label onclick="cargarAjax('GET', '/home/verPerfil.php', true, 'panel')">Perfil</label>                
-                <label onclick="cargarAjax('GET', 'amigos/amigos.php', true, 'panel')">Amigos</label>
-                <label onclick="cargarAjax('GET', 'chat/chat.php', true, 'panel')">Chat</label>                
+                <label onclick="cargarAjax('GET', 'amigos/amigos.php', true, 'panel');cargarAjax('GET', 'chat/buscadorAmigos.php', true, 'seccionAmigos')">Amigos</label>
+                <label onclick="cargarAjax('GET', 'chat/chat.php', true, 'panel');cargarAjax('GET', 'chat/buscadorAmigos.php', true, 'seccionAmigos') ">Chat</label>                
                 <input class="btn" type="image"  src="../Imagenes/notification.png">
                 <input class="btn" type="image" src="../Imagenes/exit.png" style="margin-left: 150px;">
             </ul>            

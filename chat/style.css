@@ -32,12 +32,11 @@ a {
   
 #chatbox {
     text-align:left;
-    margin:0 auto;
-    margin-bottom:25px;
+    
     padding:10px;
     background:#FFF;
-    height:420px;
-    width:430px;
+    height:94%;
+    width:80%;
     border:2px solid #ACD8F0;
     overflow:auto; }
   
@@ -56,3 +55,4 @@ a {
 .logout { float:right; }
   
 .msgln { margin:0 0 2px 0; }
+
