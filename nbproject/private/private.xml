@@ -2,32 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/home.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/home/guardarFoto.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/home/verificarPass.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/amigos/style.css</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/chat/chat.js</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/chat/buscadorAmigos.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/home/updateUsuario.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/css/home.css</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/css/index.css</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/chat/style.css</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/registro.html</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/procesar.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/chat/log.html</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/scripts/ajax.js</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/home/verPerfil.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/amigos/amigos.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/index.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/amigos/getAllUser.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/inicioSesion.html</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/chat/post.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/scripts/funcionesGestion.js</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/chat/chat.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/guardarUsuario.php</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/amigos/amigos.js</file>
-            <file>file:/home/manfred/NetBeansProjects/TaskforceProjects/ProyectoWeb/trunk/consultarBD.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
