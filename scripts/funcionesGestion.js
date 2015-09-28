@@ -44,7 +44,7 @@ var edita = true;
  * @returns {undefined}
  */
 function cambiar() {
-    if (edita === true) {        
+    if (edita === true) {
         var candado = document.getElementById("locker");
         candado.setAttribute("src", "/Imagenes/unlock.png");
         document.getElementById("nombreTF").disabled = false;

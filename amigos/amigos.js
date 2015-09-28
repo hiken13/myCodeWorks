@@ -14,7 +14,7 @@ function loadLog() {
     });
 }
 
-setInterval(loadLog, 250);
+//setInterval(loadLog, 250);
 
 var jsonPersonas;
 
@@ -52,14 +52,19 @@ function cargarAmigos(jsonPersonasAux) {
         var persona = jsonPersonasAux[i];
         
         for (var j = 0; j < persona.length; j++) {
-            var s = document.createElment("div");
-            var s = '<div class="amigo"><label>' + "hola mundo" + '</label></div>';
+            var div = document.createElement("div");                        
+            div.className = "amigo";
+            var texto =document.createTextNode(jsonPersonasAux[i][j]);
+            div.appendChild(texto);
+            document.getElementById("contenedor").appendChild(div);
+            
+            /*var s = '<div class="amigo"><label>' + "hola mundo" + '</label></div>';
             var htmlObject = $(s); // jquery call
             $("#contenedor").html(htmlObject);
             //console.log(reg["nombre"]);
             console.log(jsonPersonasAux[i][j]);
             //document.getElementById("contenedor").appendChild(htmlObject);
-            /*document.getElementById("nombre").value = reg.nombre;
+            document.getElementById("nombre").value = reg.nombre;
              document.getElementById("apellido1").value = reg.apellido1;
              document.getElementById("apellido2").value = reg.apellido2;
              document.getElementById("sexo").value = reg.sexo;*/
