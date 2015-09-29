@@ -1,9 +1,11 @@
 <?php
 session_start();
 ?>
+
 <!--doctype html-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+    <link rel="stylesheet" href="mostrarErrores/style.css"></link>
 <head>
     <meta charset="utf-8">
 
@@ -25,7 +27,7 @@ session_start();
                 <br>
                 <input id ="contraseña" type="password" name="contraseña" placeholder="Contraseña">                                
                 <br>                    
-                <button  class="btn" onclick="validarFormulario(true)">Ingresar</button>
+                <button  class="btn" onclick="validarFormulario(true)" >Ingresar</button>
                 <br>
                 <font>¿No tienes cuenta? </font>
                 <a href="javascript:cargarInicio('registro.html', 'main');">Regístrate</a>
@@ -146,13 +148,17 @@ session_start();
             campo = document.getElementById("contraseña").value;
             
             if (campo === "") {
+                
+                var textoError=document.createTextNode("No pueden haber espacios vacíos");
+                                
+               
                 alert("Espacio Vacio contraseña");
                 error = true;
             }
             if (error === true) {
                 verificarInicioSesion();
             }
-            document.getElementById("contraseña").value="";
+            document.getElementById("contraseña").value="";            
         }
     }
 

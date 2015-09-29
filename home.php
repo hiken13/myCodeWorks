@@ -14,6 +14,7 @@ session_start();
     <script type="text/javascript" src="scripts/ajax.js"></script>
     <script type="text/javascript" src="chat/chat.js"></script>
     <script type="text/javascript" src="amigos/amigos.js"></script>
+    <script type="text/javascript" src="publicacionCodigo/publicacion.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 </head>
 <body>
@@ -34,13 +35,14 @@ session_start();
                 
                 <a id="aux" name ="aux" style="visibility: hidden"></a>
                 <label>Foros</label>
+                <label onclick="cargarAjax('GET','publicacionCodigo/publicacion.php',true,'panel')">Código</label>
                 <label onclick="cargarAjax('GET', '/home/verPerfil.php', true, 'panel')">Perfil</label>                
                 <label onclick="cargarAjax('GET', 'amigos/amigos.php', true, 'panel');cargarAjax('GET', 'chat/buscadorAmigos.php', true, 'seccionAmigos')">Amigos</label>
                 <label onclick="cargarAjax('GET', 'chat/chat.php', true, 'panel');cargarAjax('GET', 'chat/buscadorAmigos.php', true, 'seccionAmigos') ">Chat</label>                
                 <input class="btn" type="image"  src="../Imagenes/notification.png">
                 <input class="btn" type="image" src="../Imagenes/exit.png" style="margin-left: 150px;">
             </ul>            
-        </div>
+        </div> 
         <div class="panel" id="panel">
         </div>
     </div>
