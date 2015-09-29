@@ -7,7 +7,7 @@
     $arreglo;
     while($row = pg_fetch_row($result))
     {
-        $row[0] = cifrarDescifrar(false, $row[0]);//NOmbre
+        $row[0] = cifrarDescifrar(false, $row[0]);//Nombre
         $row[1] = cifrarDescifrar(false, $row[1]);//Apellido1
         $row[2] = cifrarDescifrar(false, $row[2]);//Apellido2
         array_push($row, $row[3]);
@@ -16,8 +16,7 @@
         //$row[5] Genero
         //$row[6] Fecha Ingreso
         //$row[7] Empresa
-        
-        //echo $row[0].$row[1].$row[2].$row[3];
+        //$row[8] Nuevo Campo Correo Encriptado para la imagen
         $arreglo[$posicion] = $row;
         $posicion++;
     }

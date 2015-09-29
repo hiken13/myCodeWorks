@@ -1,21 +1,17 @@
 .contenedores {
     border:2px solid #ACD8F0;
-    //height:470px;
     background-color: white;
     padding:10px;
     text-align:left;
     margin:0 auto;
-
-
-    padding:10px;
     height:100%; 
     width:150px; 
     margin-right: 0px;    
-
 }
 
 #muro {
-    width: 500px;   
+    width: 500px;  
+    overflow: auto;
 }
 
 #contenedorAmigos {
@@ -69,16 +65,38 @@ table{
     border:2px solid lightgray;
     padding: 8px 8px 8px 32px;
     font-family: Arial, Verdana;
-    background-position: 8px 8px;
+    background-position: 2px 2px;
     background-repeat: no-repeat;
-    background-size: 40px 40px;
+    background-size: 35px 35px;
     background-color: white;
     height: 15%;
     width: 97%;
     margin: 3px;
 }
 
-.imagenAmigo{
-    width: 50px;
-    height: 50px;
+#imagenAmigo{
+    width: 100px;
+    height: 100px;
+    float: top;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 100px 96px;
+    background-color: white;
+    margin: 70px;
+}
+
+.arriba {
+    height: 40%;
+    width: 100%;
+}
+
+.abajo {
+    height: 40%;
+    width: 100%;
+    
+}
+
+.portada {
+    height: 100%;
+    width: 100%;
 }

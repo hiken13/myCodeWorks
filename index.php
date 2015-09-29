@@ -20,19 +20,19 @@ session_start();
 
 <body>
     <div id="main">
-        <div id="entrar" class="divs">
+        <form id="entrar" class="divs" onsubmit="validarFormulario(true);return false">
             <center>          
                 <font>Iniciar Sesión</font>
                 <input  id ="correoElectronico" type="text" name="correoElectronico" placeholder="Correo electrónico">                
                 <br>
                 <input id ="contraseña" type="password" name="contraseña" placeholder="Contraseña">                                
                 <br>                    
-                <button  class="btn" onclick="validarFormulario(true)" >Ingresar</button>
+                    <button  class="btn" type="submit">Ingresar</button>
                 <br>
                 <font>¿No tienes cuenta? </font>
                 <a href="javascript:cargarInicio('registro.html', 'main');">Regístrate</a>
             </center>
-        </div>
+        </form>
 
     </div>
 </body>
