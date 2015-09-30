@@ -31,6 +31,7 @@ function verificarPublicacion() {
  */
 function guardarPublicacion(descripcion, codigo, lenguaje) {
 
+
     var llamada = "/publicacionCodigo/guardarPublicacion.php?descripcion=" + descripcion + "&lenguaje=" + lenguaje + "&codigo=" + codigo;
     var peticion = new XMLHttpRequest();
     peticion.open("GET", llamada, true);
@@ -46,18 +47,92 @@ function guardarPublicacion(descripcion, codigo, lenguaje) {
             {
                 //guarda la publicacion
                 alert("Su código fue publicado con éxito");
-                document.getElementById("publicacion").value="";
-                document.getElementById("lenguaje").value="";
-                document.getElementById("descripcion").value="";
+                document.getElementById("publicacion").value = "";
+                document.getElementById("lenguaje").value = "";
+                document.getElementById("descripcion").value = "";                
                 return true;
             }
             else
             {//no guarda la publicacion
                 alert("Error al publicar el código, lo sentimos");
                 return false;
+            }            
+        }
+    };
+    getAllPosts();
+    peticion.send(null);
+}
+/***
+ * Metodo para obtener todas las publicaciones en un arreglo
+ * @returns {undefined}
+ */
+function getAllPosts() {
+    var llamada = "publicacionCodigo/getAllPosts.php";
+
+    var peticion = new XMLHttpRequest();
+    peticion.open("GET", llamada, true);
+
+    peticion.onreadystatechange = function ()
+    {
+        if (peticion.readyState === 4)
+        {
+            if (peticion.status === 200)
+            {
+                jsonPosts = eval("(" + peticion.responseText + ")");
+                postPublicaciones(jsonPosts);
+            }
+            else
+            {
+                console.log("error al recuperar los usuarios");
             }
         }
     };
     peticion.send(null);
 }
 
+/**
+ * Recorre el arreglo con las publicaciones y las dibuja con DOM en el muro de publicaciones
+ * obteniendo los valores de cada publicaicón
+ * @param {type} jsonPostsAux arreglo con las publicaciones
+ * @returns {undefined}
+ */
+function postPublicaciones(jsonPostsAux) {
+    document.getElementById("muro").innerHTML="";
+    for (var i = 0; i < jsonPostsAux.length; i++) {
+        var post = jsonPostsAux[i];
+
+
+        var div = document.createElement("div");
+        var descripcion = document.createElement("textarea");
+        descripcion.setAttribute("cols", "45");
+        descripcion.setAttribute("rows", "5");
+        descripcion.setAttribute("disabled","true");
+        descripcion.value = jsonPostsAux[i][1];
+
+        var lenguaje = document.createElement("textarea");
+        lenguaje.setAttribute("cols", "45");
+        lenguaje.setAttribute("rows", "1");        
+        lenguaje.setAttribute("disabled","true");
+        lenguaje.value = jsonPostsAux[i][2];
+
+        var codigo = document.createElement("textarea");
+        codigo.setAttribute("cols", "45");
+        codigo.setAttribute("rows", "25");        
+        codigo.setAttribute("disabled","true")
+        
+        codigo.value = jsonPostsAux[i][3];
+
+        div.appendChild(descripcion);
+        div.appendChild(lenguaje);
+        div.appendChild(codigo);
+        div.className = "contenedor";
+
+        console.log(descripcion.value);
+        console.log(lenguaje.value);
+        console.log(codigo.value);
+
+
+        var muro = document.getElementById("muro");
+        muro.appendChild(div);        
+    }
+}
