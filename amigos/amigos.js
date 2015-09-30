@@ -2,23 +2,6 @@
 var jsonPersonas;
 var ejecucion = 0;
 
-function loadLog() {
-    var oldscrollHeight = $("#contenedor").attr("scrollHeight") - 20;
-    $.ajax({
-        url: "chat/log.html",
-        cache: false,
-        success: function (html) {
-            $("#contenedor").html(html);
-            var newscrollHeight = $("#contenedor").attr("scrollHeight") - 20;
-            if (newscrollHeight > oldscrollHeight) {
-                $("#contenedor").animate({scrollTop: newscrollHeight}, 'normal');
-            }
-        }
-    });
-}
-
-//setInterval(loadLog, 250);
-
 function getAllUser() {
     var llamada = "amigos/getAllUser.php";
 
@@ -44,7 +27,7 @@ function getAllUser() {
 }
 
 function cargarAmigos(jsonPersonasAux) {
-
+    document.getElementById("contenedor").innerHTML="";
     for (var i = 0; i < jsonPersonasAux.length; i++) {
         var persona = jsonPersonasAux[i];
 
@@ -147,9 +130,10 @@ function cargarInfoAmigo(correo) {
         for (var i = 0; i < jsonPersonasAux.length; i++) {
             var persona = jsonPersonasAux[i];
             if (persona[3] == correo) {
+                document.getElementById("muro").innerHTML="";
                 crearPortadaAmigo(persona);
                 //for (var j = 0; j < persona.length; j++) {
-                    
+
                 //}
             }
         }
@@ -158,41 +142,71 @@ function cargarInfoAmigo(correo) {
 
 // Crea la portada o pagina principal de la persona seleccionada
 function crearPortadaAmigo(persona) {
-    
+    var nombre = persona[0] + " " + persona[1] + " " + persona[2];
     var div1 = document.createElement("div");
     var div2 = document.createElement("div");
     var div3 = document.createElement("div");
-    var divImagen = document.createElement("div");
+    var divPortada = document.createElement("div");
+    divPortada.id = "imagenAmigo";
+    var label = document.createElement("label");
+    label.id = "textoPortada";
+    label.innerHTML = nombre;
     
     var img = document.createElement('button');
     img.type = "button";
-    
-    img.id = "imagenAmigo";
-    img.style.backgroundImage = "url(profilePictures/" + persona[10] + ")";   
-    
-    //img.src = "url(../profilePictures/" + persona[10] + ")";
-    console.log(persona[10]);
-    
 
+    img.id = "imagenAmigo";
+    img.style.backgroundImage = "url(profilePictures/" + persona[10] + ")";
+
+    //img.src = "url(../profilePictures/" + persona[10] + ")";
     //divImagen.setAttribute("style", "text-align:center;");
 
 
     div1.className = "portada";
     div1.setAttribute("style", "text-align:center;");
-    
+
     div2.className = "arriba";
-    
-    var color = "#"+((1<<24)*Math.random()|0).toString(16);
-    div2.setAttribute("style", "background-color: " + color +  ";");
-    color = "#"+((1<<24)*Math.random()|0).toString(16);
-    div3.setAttribute("style", "background-color: " + color +  ";");
+
+    var color = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+    div2.setAttribute("style", "background-color: " + color + ";");
+    //color = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+    div3.setAttribute("style", "background-color: lightgray;");
     div3.className = "abajo";
+    div3.appendChild(label);
     //"#"+((1<<24)*Math.random()|0).toString(16)
     
+    divPortada.appendChild(img);
+    //divPortada.appendChild(label);
+    
+    div2.appendChild(img);
     div1.appendChild(div2);
     //div1.appendChild(divImagen);
-    div2.appendChild(img);
+    //divPortada.appendChild(img);
+    //divPortada.appendChild(label);
+    //div2.appendChild(divPortada);
+    //div2.appendChild(label);
     div1.appendChild(div3);
     document.getElementById("muro").appendChild(div1);
-    
+}
+
+// Carga amigos buscados por nombre
+function cargarAmigosBuscados(d){
+    //console.log(d.value);
+    getAmigoBuscado(d.value);
+}
+
+function getAmigoBuscado(palabra){
+    var amigosEncontrados = [];
+    for (var i = 0; i < jsonPersonas.length; i++)
+    {
+        var  amigo = jsonPersonas[i];
+        var nombre = amigo[0] + " " + amigo[1] + " " + amigo[2];
+        if ((amigo[0].toLowerCase().indexOf(palabra) >= 0) || (amigo[1].toLowerCase().indexOf(palabra) >= 0) || (amigo[2].toLowerCase().indexOf(palabra) >= 0) || (nombre.toLowerCase().indexOf(palabra) >= 0)){
+            amigosEncontrados.push(amigo);
+        }
+    }
+    if (amigosEncontrados !== undefined){
+        document.getElementById("contenedor").innerHTML="";
+        cargarAmigos(amigosEncontrados);
+    }
 }

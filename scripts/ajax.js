@@ -40,8 +40,11 @@ function cargarAjax(metodo, queCargar, sync, dondeCargar)
         {
             if (peticion.status === 200)
             {
-                document.getElementById(dondeCargar).innerHTML = "";
-                document.getElementById(dondeCargar).innerHTML = peticion.responseText;
+                var a = document.getElementById(dondeCargar).innerHTML;
+                if (a!==null){
+                    document.getElementById(dondeCargar).innerHTML = "";
+                    document.getElementById(dondeCargar).innerHTML = peticion.responseText;
+                }
             }
             /*
              else

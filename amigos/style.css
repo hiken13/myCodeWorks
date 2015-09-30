@@ -73,6 +73,13 @@ table{
     width: 97%;
     margin: 3px;
 }
+#imagenAmigo2{
+    width: 100px;
+    height: 100px;
+    //background-size: 100px 96px;
+    ///background-repeat: no-repeat;
+    float: top;
+}
 
 #imagenAmigo{
     width: 100px;
@@ -100,3 +107,27 @@ table{
     height: 100%;
     width: 100%;
 }
+
+#textoPortada {
+    color: black;
+    font-size: 18px;
+    float: none;
+    text-align: center;
+    font-family:  Verdana;
+    padding-top: 50px;
+    display: block;
+    margin: auto;
+
+}
+
+#textoPortada:hover{
+    color: black;    
+    cursor: pointer;
+    font-size: 18px;
+    padding: 50px;
+    margin: auto;
+    color: black;
+    height: auto;
+    width: auto;
+}
+
