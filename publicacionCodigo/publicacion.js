@@ -11,13 +11,14 @@ function verificarPublicacion() {
         alert("Error existen espacios en blanco");
     }
     else {
-        publicacion = publicacion.split('\n');
-        console.log(publicacion.length);
-        if (publicacion.length > 500) {
+        var auxPublicacion = publicacion;
+        auxPublicacion = auxPublicacion.split('\n');
+        console.log(auxPublicacion.length);
+        if (auxPublicacion.length > 500) {
             alert("Demasiadas lineas de codigo, el límite es 500");
         }
         else {
-            guardarPublicacion(descripcion, publicacion, lenguaje)
+            guardarPublicacion(descripcion, publicacion, lenguaje);
         }
     }
 }
@@ -30,7 +31,6 @@ function verificarPublicacion() {
  * @returns {undefined} true si guarda, false si no
  */
 function guardarPublicacion(descripcion, codigo, lenguaje) {
-
 
     var llamada = "/publicacionCodigo/guardarPublicacion.php?descripcion=" + descripcion + "&lenguaje=" + lenguaje + "&codigo=" + codigo;
     var peticion = new XMLHttpRequest();
@@ -118,7 +118,7 @@ function postPublicaciones(jsonPostsAux) {
         var codigo = document.createElement("textarea");
         codigo.setAttribute("cols", "45");
         codigo.setAttribute("rows", "25");        
-        codigo.setAttribute("disabled","true")
+        codigo.setAttribute("disabled","true");
         
         codigo.value = jsonPostsAux[i][3];
 

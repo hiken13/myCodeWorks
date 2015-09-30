@@ -132,6 +132,7 @@ function cargarInfoAmigo(correo) {
             if (persona[3] == correo) {
                 document.getElementById("muro").innerHTML="";
                 crearPortadaAmigo(persona);
+                getCodePostFriend(persona[10]);
                 //for (var j = 0; j < persona.length; j++) {
 
                 //}
@@ -209,4 +210,77 @@ function getAmigoBuscado(palabra){
         document.getElementById("contenedor").innerHTML="";
         cargarAmigos(amigosEncontrados);
     }
+}
+
+function getCodePostFriend(correo) {
+
+    var llamada = "amigos/getCodePostFriend.php?correo=" + correo;
+    var peticion = new XMLHttpRequest();
+    peticion.open("GET", llamada, true);
+    console.log(llamada);
+    peticion.onreadystatechange = function ()
+    {
+        if (peticion.readyState === 4)
+        {
+            if (peticion.status === 200)
+            {
+                codePost = eval("(" + peticion.responseText + ")");
+                if (codePost.length>0){
+                    for (var i = 0; i < codePost.length; i++)
+                    {
+                        console.log(codePost[i]);
+                    }
+                    console.log("si encontro post de codigo");
+                }
+                else
+                {
+                    console.log("no encontro codigo posteado");
+                }
+                
+            }
+            else
+            {
+                console.log("error al buscar post de codigo");
+            }
+        }
+    };
+    peticion.send(null);
+}
+
+// Crea la portada o pagina principal de la persona seleccionada
+function crearPortadaAmigo(persona) {
+    var nombre = persona[0] + " " + persona[1] + " " + persona[2];
+    var div1 = document.createElement("div");
+    
+    var label = document.createElement("label");
+    label.id = "textoPortada";
+    label.innerHTML = nombre;
+    
+    //img.src = "url(../profilePictures/" + persona[10] + ")";
+    //divImagen.setAttribute("style", "text-align:center;");
+
+
+    div1.className = "portada";
+    div1.setAttribute("style", "text-align:center;");
+
+    var color = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+    div2.setAttribute("style", "background-color: " + color + ";");
+    //color = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+    div3.setAttribute("style", "background-color: lightgray;");
+    div3.className = "abajo";
+    div3.appendChild(label);
+    //"#"+((1<<24)*Math.random()|0).toString(16)
+    
+    divPortada.appendChild(img);
+    //divPortada.appendChild(label);
+    
+    div2.appendChild(img);
+    div1.appendChild(div2);
+    //div1.appendChild(divImagen);
+    //divPortada.appendChild(img);
+    //divPortada.appendChild(label);
+    //div2.appendChild(divPortada);
+    //div2.appendChild(label);
+    div1.appendChild(div3);
+    document.getElementById("muro").appendChild(div1);
 }

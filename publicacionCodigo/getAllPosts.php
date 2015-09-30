@@ -1,7 +1,11 @@
 <?php
+    session_start();
+    $session = $_SESSION["loggedUsuario"];
     include '../procesar.php';
     $conn = pg_connect("host=localhost port=5432 dbname=webBD user=postgres password=12345") or die("<strong> Ha ocurrido un error en el acceso a la base de datos. </strong>");
-    $result = pg_query($conn, "select * from publicaciones");
+    $strUsuario = cifrarDescifrar(true, $session[3]);
+    
+    $result = pg_query($conn, "select * from publicaciones where usuario='$strUsuario'");
     
     $posicion = 0;
     $arreglo;
